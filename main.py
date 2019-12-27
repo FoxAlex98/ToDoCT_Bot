@@ -1,6 +1,8 @@
 import telepot
-token = 'token'
-TelegramBot = telepot.Bot(token)
+
+from settings import *
+
+TelegramBot = telepot.Bot(TOKEN)
 print (TelegramBot.getMe())
 print ("\n")
 print (TelegramBot.getUpdates())
@@ -11,7 +13,7 @@ def on_chat_message(msg):
     if content_type == 'text':
         bot.sendMessage(chat_id, 'ciao ' + name)
 
-bot = telepot.Bot(token)
+bot = telepot.Bot(TOKEN)
 bot.message_loop(on_chat_message)
 
 print ("Listening ...")
